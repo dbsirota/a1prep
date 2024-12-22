@@ -1,3 +1,9 @@
+<?php
+// Debug requested URI
+echo "Requested URI: " . $_SERVER['REQUEST_URI'];
+exit;
+?>
+
 <!DOCTYPE html>
 <html>
 <head>

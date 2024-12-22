@@ -1,6 +1,5 @@
 <?php
-// Debug requested URI
-echo "Requested URI: " . $_SERVER['REQUEST_URI'];
+echo "Map page loaded successfully!";
 exit;
 ?>
 

@@ -57,6 +57,7 @@ function addFixInput() {
       validateFixNameInput(this);
     });
     document.getElementById("labels").appendChild(fixInput);
+	fixInput.style.backgroundColor = "#e0f7fa"; // Light blue for fix name
 
     // Create input field for altitude (if applicable)
     if (fix.altitude) {
@@ -105,7 +106,7 @@ function validateFixAltitudeInput(ele) {
   }
 }
 
-fixInput.style.backgroundColor = "#e0f7fa"; // Light blue for fix name
+
 altitudeInput.style.backgroundColor = "#fce4ec"; // Light pink for altitude
 
 

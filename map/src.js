@@ -72,6 +72,7 @@ function addFixInput() {
         validateFixAltitudeInput(this);
       });
       document.getElementById("labels").appendChild(altitudeInput);
+	    altitudeInput.style.backgroundColor = "#fce4ec"; // Light pink for altitude
     }
   }
 }
@@ -105,9 +106,6 @@ function validateFixAltitudeInput(ele) {
     ele.style.color = "black"; // Default color for empty
   }
 }
-
-
-altitudeInput.style.backgroundColor = "#fce4ec"; // Light pink for altitude
 
 
 function clearBoxes() {

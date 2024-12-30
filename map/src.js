@@ -181,7 +181,6 @@ function checkBoxes(ele) {
 	console.log(errorCount);
 	//				document.getElementById("mistakes").innerHTML = errorCount;
 
-
-
-
 }	
+
+addFixInput();

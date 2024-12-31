@@ -180,8 +180,8 @@ function validateFixAltitudeInput(ele) {
 
 
 function clearBoxes() {
-	for (var i = 0; i < vorArray.length; i++) {
-		ele = document.getElementById(vorArray[i].name);
+	for (var i = 0; i < fixArray.length; i++) {
+		ele = document.getElementById(fixArray[i].name);
 		ele.defaultValue = "";
 		ele.style.color = "black";
 		ele.style.background = "transparent";

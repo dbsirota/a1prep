@@ -75,6 +75,7 @@ function addFixInput() {
 	    altitudeInput.style.backgroundColor = "#fce4ec"; // Light pink for altitude
     }
   }
+	console.log("Added fix inputs!")
 }
 
 function validateFixNameInput(ele) {

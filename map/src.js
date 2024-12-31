@@ -93,6 +93,23 @@ function addFixInput() {
 
     var coords = getCoords(fixElement);
 
+// Create input field for altitude (if applicable)
+    if (fixData) {
+      var altitudeInput = document.createElement("input");
+      altitudeInput.id = fixName + "_alt";
+      altitudeInput.style.position = "absolute";
+      altitudeInput.style.textAlign = "center";
+      //altitudeInput.style.left = coords.left + 50 + "px"; // Offset for altitude BUT WE DON'T WANT IT OFFSET
+	    altitudeInput.style.left = coords.left + "px";
+      altitudeInput.style.top = coords.top + "px";
+      altitudeInput.placeholder = "ALT";
+      altitudeInput.addEventListener("keyup", function () {
+        validateFixAltitudeInput(this); doInput(this);
+      });
+      document.getElementById("labels").appendChild(altitudeInput);
+	    altitudeInput.style.backgroundColor = "#fce4ec"; // Light pink for altitude
+    } else {
+	  
     // Create input field for fix name
     var fixInput = document.createElement("input");
     //fixInput.id = fix.name + "_fix";
@@ -110,14 +127,15 @@ function addFixInput() {
 	  fixInput.class = "labelText";
     document.getElementById("labels").appendChild(fixInput);
 	fixInput.style.backgroundColor = "#e0f7fa"; // Light blue for fix name
-
+    }
     // Create input field for altitude (if applicable)
-    if (fixData) {
+    /*if (fixData) {
       var altitudeInput = document.createElement("input");
       altitudeInput.id = fixName + "_alt";
       altitudeInput.style.position = "absolute";
       altitudeInput.style.textAlign = "center";
-      altitudeInput.style.left = coords.left + 50 + "px"; // Offset for altitude
+      //altitudeInput.style.left = coords.left + 50 + "px"; // Offset for altitude BUT WE DON'T WANT IT OFFSET
+	    altitudeInput.style.left = coords.left + "px";
       altitudeInput.style.top = coords.top + "px";
       altitudeInput.placeholder = "ALT";
       altitudeInput.addEventListener("keyup", function () {
@@ -125,7 +143,7 @@ function addFixInput() {
       });
       document.getElementById("labels").appendChild(altitudeInput);
 	    altitudeInput.style.backgroundColor = "#fce4ec"; // Light pink for altitude
-    }
+    }*/
   }
 	console.log("Added fix inputs!")
 }
@@ -163,7 +181,7 @@ function validateFixAltitudeInput(ele) {
 
 function clearBoxes() {
 	for (var i = 0; i < vorArray.length; i++) {
-		ele = document.getElementById(vorArray[i]);
+		ele = document.getElementById(vorArray[i].name);
 		ele.defaultValue = "";
 		ele.style.color = "black";
 		ele.style.background = "transparent";

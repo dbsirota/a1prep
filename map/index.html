@@ -88,9 +88,7 @@
     <div class="button">		
 		<a href="/"><button>Back to AeroCenter Site</button></a>
 		<button onclick="fillBoxes()">Fill Answers</button>		
-		<button onclick="clearBoxes()">Reset</button>		
-		<button onclick="toggleSectors()">Toggle Airspace</button>
-		<button onclick="hintBoxes()">Hint!</button>				
+		<button onclick="clearBoxes()">Reset</button>				
 		<button onclick="checkAll()" id="checkAnswers">Check Answers</button>
 		<span class="checkbox"><input class="checkbox" onclick="setAutocorrect()" type="checkbox" name="autocorrect" id="enableAutocorrect"> Autocorrect</span>
 </div>
@@ -99,4 +97,15 @@
     <object type="image/svg+xml" data="map.svg" style="width: 100%; height: auto;"></object>
     <script src="src.js"></script>
 </body>
+	<?php
+	echo file_get_contents("map.svg");
+?>		
+
+
+		<div id="labels">
+		</div>		
+		
+		<script src="src.js?id=202405141">
+		</script>
+	</body>
 </html>

@@ -1,8 +1,8 @@
 {
-  "name": "Aero Center",
+  "name": "Area 1 Prep",
   "theme_color": "#9e9e9e",
   "background_color": "#9E9E9E",
-  "start_url": "index.php",
+  "start_url": "index.html",
   "display": "standalone",
   "icons":[
 	  {

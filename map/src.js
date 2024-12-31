@@ -180,6 +180,18 @@ function validateFixAltitudeInput(ele) {
 
 
 function clearBoxes() {
+
+	const svgObject = document.querySelector('object[type="image/svg+xml"]');
+  if (!svgObject) {
+    console.error("SVG object not found!");
+    return;
+  }
+
+  const svgDoc = svgObject.contentDocument; // Access the SVG's document
+  if (!svgDoc) {
+    console.error("Unable to access SVG document!");
+    return;
+  }
 	for (var i = 0; i < fixArray.length; i++) {
 		ele = document.getElementById(fixArray[i].name);
 		ele.defaultValue = "";
@@ -216,6 +228,18 @@ function doInput(ele) {
 }
 
 function checkAll() {
+
+	const svgObject = document.querySelector('object[type="image/svg+xml"]');
+  if (!svgObject) {
+    console.error("SVG object not found!");
+    return;
+  }
+
+  const svgDoc = svgObject.contentDocument; // Access the SVG's document
+  if (!svgDoc) {
+    console.error("Unable to access SVG document!");
+    return;
+  }
 	for (var i = 0; i < fixArray.length; i++) {
 		ele = document.getElementById(fixArray[i]);
 		checkBoxes(ele);

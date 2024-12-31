@@ -43,8 +43,8 @@ function addFixInput() {
 	  console.log("running for " + i + "iterations!");
     var fixName = fixArray[i].name;
 	  var fixData = fixArray[i].altitude;
-    var fixElement = document.getElementById(fixName);
-    if (!fixElement) continue;
+    //var fixElement = document.getElementById(fixName);
+    //if (!fixElement) continue;
 
 	  console.warning("Adding fix " + fixName);
 
@@ -192,5 +192,3 @@ function checkBoxes(ele) {
 	//				document.getElementById("mistakes").innerHTML = errorCount;
 
 }	
-
-addFixInput();

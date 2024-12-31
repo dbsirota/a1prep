@@ -5,7 +5,6 @@
     <link rel="manifest" href="manifest.json">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Map</title>
-
     <style>
         body {
             font-family: sans-serif;
@@ -13,10 +12,6 @@
 
         .vRoute {
             stroke: blue;
-        }
-
-        input:disabled {
-            opacity: 1;
         }
 
         .labelText {
@@ -39,58 +34,30 @@
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            font-size: 12;
+            font-size: 12px;
             margin: 4px 2px;
             border-radius: 4px;
             cursor: pointer;
             border: none;
         }
 
-        .footer {
-            font-family: sans-serif;
-            font-size: small;
-        }
-
-        .errorCount {
-            position: fixed;
-            background: white;
-            bottom: 10px;
-            right: 10px;
-        }
-
-        .checkbox {
-            display: inline-block;
-        }
-
-        .sectorText {
-            font-size: x-small;
-            white-space: nowrap;
+        #svg-container {
+            width: 100%;
+            height: auto;
         }
     </style>
 </head>
 
-<body onload="addFixInput()">
+<body onload="loadMap()">
     <div class="button">
         <a href="/"><button>Back to AeroCenter Site</button></a>
         <button onclick="fillBoxes()">Fill Answers</button>
         <button onclick="clearBoxes()">Reset</button>
         <button onclick="checkAll()" id="checkAnswers">Check Answers</button>
-        <span class="checkbox">
-            <input class="checkbox" onclick="setAutocorrect()" type="checkbox" name="autocorrect" id="enableAutocorrect">
-            Autocorrect
-        </span>
     </div>
 
-    <!-- Directly embed your SVG here -->
-    <div id="svg-container">
-        <svg id="map-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="auto">
-            <!-- Place your SVG content here -->
-            <circle id="fix1" cx="50" cy="50" r="10" fill="red" />
-            <circle id="fix2" cx="150" cy="100" r="10" fill="blue" />
-            <!-- More SVG elements -->
-        </svg>
-    </div>
-
+    <!-- This container will hold the embedded SVG -->
+    <div id="svg-container"></div>
     <div id="labels"></div>
     <script src="src.js"></script>
 </body>

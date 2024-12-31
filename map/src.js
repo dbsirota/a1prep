@@ -46,7 +46,7 @@ function addFixInput() {
     //var fixElement = document.getElementById(fixName);
     //if (!fixElement) continue;
 
-	  console.warning("Adding fix " + fixName);
+	  console.log("Adding fix " + fixName);
 
     var coords = getCoords(fixElement);
 

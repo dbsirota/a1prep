@@ -193,7 +193,7 @@ function clearBoxes() {
     return;
   }
 	for (var i = 0; i < fixArray.length; i++) {
-		ele = document.getElementById(fixArray[i].name);
+		ele = svgDoc.getElementById(fixArray[i].name);
 		ele.defaultValue = "";
 		ele.style.color = "black";
 		ele.style.background = "transparent";
@@ -241,7 +241,7 @@ function checkAll() {
     return;
   }
 	for (var i = 0; i < fixArray.length; i++) {
-		ele = document.getElementById(fixArray[i]);
+		ele = svgDoc.getElementById(fixArray[i]);
 		checkBoxes(ele);
 
 	}

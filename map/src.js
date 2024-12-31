@@ -38,13 +38,15 @@ function setAutocorrect() {
 }
 
 function addFixInput() {
+	console.log("Starting input loop!");
   for (var i = 0; i < fixArray.length; i++) {
+	  console.log("running for " + i + "iterations!");
     var fixName = fixArray[i].name;
 	  var fixData = fixArray[i].altitude;
     var fixElement = document.getElementById(fixName);
     if (!fixElement) continue;
 
-	  console.log("Adding fix " + fixName);
+	  console.warning("Adding fix " + fixName);
 
     var coords = getCoords(fixElement);
 

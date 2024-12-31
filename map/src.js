@@ -44,7 +44,7 @@ function addFixInput() {
     var fixName = fixArray[i].name;
 	  var fixData = fixArray[i].altitude;
     var fixElement = document.getElementById(fixName); //so things need to be made in HTML first.
-    if (!fixElement) continue;
+    //if (!fixElement) continue;
 
 	  console.log("Adding fix " + fixName);
 

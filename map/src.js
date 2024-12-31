@@ -96,14 +96,14 @@ function addFixInput() {
     // Create input field for altitude (if applicable)
     if (fixData) {
       var altitudeInput = document.createElement("input");
-      altitudeInput.id = fix.name + "_alt";
+      altitudeInput.id = fixName + "_alt";
       altitudeInput.style.position = "absolute";
       altitudeInput.style.textAlign = "center";
       altitudeInput.style.left = coords.left + 50 + "px"; // Offset for altitude
       altitudeInput.style.top = coords.top + "px";
       altitudeInput.placeholder = "ALT";
       altitudeInput.addEventListener("keyup", function () {
-        validateFixAltitudeInput(this);
+        validateFixAltitudeInput(this); doInput(this);
       });
       document.getElementById("labels").appendChild(altitudeInput);
 	    altitudeInput.style.backgroundColor = "#fce4ec"; // Light pink for altitude

@@ -37,7 +37,7 @@ function setAutocorrect() {
 	}
 }
 
-function loadMap() {
+/*function loadMap() {
     const svgContainer = document.getElementById('svg-container');
 
     // Fetch the SVG content
@@ -58,19 +58,37 @@ function loadMap() {
         .catch((error) => {
             console.error(error);
         });
-}
+}*/
 
 
 function addFixInput() {
 	console.log("Starting input loop!");
-  for (var i = 0; i < fixArray.length; i++) {
-	  console.log("running for " + i + "iterations!");
-    var fixName = fixArray[i].name;
-	  console.log("finding " + fixName);
-	  var fixData = fixArray[i].altitude;
-    var fixElement = document.getElementById(fixName); //so things need to be made in HTML first.
-    //if (!fixElement) continue;
 
+  const svgObject = document.querySelector('object[type="image/svg+xml"]');
+  if (!svgObject) {
+    console.error("SVG object not found!");
+    return;
+  }
+
+  const svgDoc = svgObject.contentDocument; // Access the SVG's document
+  if (!svgDoc) {
+    console.error("Unable to access SVG document!");
+    return;
+  }
+
+  for (let i = 0; i < fixArray.length; i++) {
+    console.log("Running for " + i + " iterations!");
+
+    const fixName = fixArray[i].name;
+    console.log("Finding " + fixName);
+
+    const fixData = fixArray[i].altitude;
+    const fixElement = svgDoc.getElementById(fixName); // Access elements within the SVG
+
+    if (!fixElement) {
+      console.warn("Fix element not found: " + fixName);
+      continue;
+    }
 	  console.log("Adding fix " + fixName);
 
     var coords = getCoords(fixElement);

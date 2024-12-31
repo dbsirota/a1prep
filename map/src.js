@@ -180,7 +180,7 @@ function validateFixAltitudeInput(ele) {
 
 
 function clearBoxes() {
-
+console.log("Clearing!");
 	const svgObject = document.querySelector('object[type="image/svg+xml"]');
   if (!svgObject) {
     console.error("SVG object not found!");

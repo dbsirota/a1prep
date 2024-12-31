@@ -37,6 +37,30 @@ function setAutocorrect() {
 	}
 }
 
+function loadMap() {
+    const svgContainer = document.getElementById('svg-container');
+
+    // Fetch the SVG content
+    fetch('map.svg')
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`Failed to load SVG: ${response.statusText}`);
+            }
+            return response.text();
+        })
+        .then((svgText) => {
+            // Insert the SVG content directly into the DOM
+            svgContainer.innerHTML = svgText;
+
+            // Now you can access the SVG elements using document.getElementById
+            addFixInput(); // Call your initialization function
+        })
+        .catch((error) => {
+            console.error(error);
+        });
+}
+
+
 function addFixInput() {
 	console.log("Starting input loop!");
   for (var i = 0; i < fixArray.length; i++) {

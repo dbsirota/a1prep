@@ -39,28 +39,35 @@ function setAutocorrect() {
 
 function addFixInput() {
   for (var i = 0; i < fixArray.length; i++) {
-    var fix = fixArray[i];
-    var fixElement = document.getElementById(fix.name);
+    var fixName = fixArray[i].name;
+	  var fixData = fixArray[i].altitude;
+    var fixElement = document.getElementById(fixName);
     if (!fixElement) continue;
+
+	  console.log("Adding fix " + fixName);
 
     var coords = getCoords(fixElement);
 
     // Create input field for fix name
     var fixInput = document.createElement("input");
-    fixInput.id = fix.name + "_fix";
+    //fixInput.id = fix.name + "_fix";
+	  fixInput.id = fixName + "_fix";
+	  fixInput.className = "labelText";
     fixInput.style.position = "absolute";
     fixInput.style.textAlign = "center";
     fixInput.style.left = coords.left + "px";
     fixInput.style.top = coords.top + "px";
     fixInput.placeholder = "FIX";
     fixInput.addEventListener("keyup", function () {
-      validateFixNameInput(this);
+      validateFixNameInput(this); doInput(this);
     });
+	  fixInput.type = "text";
+	  fixInput.class = "labelText";
     document.getElementById("labels").appendChild(fixInput);
 	fixInput.style.backgroundColor = "#e0f7fa"; // Light blue for fix name
 
     // Create input field for altitude (if applicable)
-    if (fix.altitude) {
+    if (fixData) {
       var altitudeInput = document.createElement("input");
       altitudeInput.id = fix.name + "_alt";
       altitudeInput.style.position = "absolute";
